@@ -7,9 +7,9 @@ const createAutoComplete = ({ root, renderOption, onOptionSelect, inputValue, fe
     <div class="dropdown">
         <div class="dropdown-menu">
             <div class="dropdown-content results">
-            <div/>
-        <div/>
-    <div/>
+            </div>
+        </div>
+    </div>
 `;
 	const input = root.querySelector('input');
 	const dropdown = root.querySelector('.dropdown');
