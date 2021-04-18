@@ -1,4 +1,4 @@
-// Rendering an instances of the autocomplete widget using createAutoComplete widget -- 
+// Rendering an instances of the autocomplete widget using createAutoComplete widget --
 // In React -- This would have been like creating / rendering a autocomplete instance in index.js
 //  by importing the autocomplete component from autocomplete.js
 
@@ -99,17 +99,10 @@ const runComparism = () => {
             leftStat.classList.remove('is-primary')
             leftStat.classList.add('is-warning')
         }
-        else if (rightSideValue < leftSideValue) {
+        else {
             rightStat.classList.remove('is-primary')
             rightStat.classList.add('is-warning')
         }
-        else {
-            rightStat.classList.remove('is-primary')
-            rightStat.classList.add('is-info')
-            leftStat.classList.remove('is-primary')
-            leftStat.classList.add('is-info')
-        }
-
     })
 }
 
@@ -122,7 +115,7 @@ const movieTemplate = (movieDetail) => {
 
 
     //----------------------------------------------------//
-    // Using reduce() to calculate total number of awards and nominations 
+    // Using reduce() to calculate total number of awards and nominations
     //----------------------------------------------------//
 
     const awards = movieDetail.Awards.split(' ').reduce((total, currentElement) => {
@@ -156,18 +149,18 @@ const movieTemplate = (movieDetail) => {
 
     return `
         <article class="media">
-            <figure class="media-left"> 
+            <figure class="media-left">
                <p class="image">
                <img src = "${movieDetail.Poster}"/>
-               </p> 
-            </figure> 
+               </p>
+            </figure>
             <div class="media-content">
                 <div class="content">
                     <h1>${movieDetail.Title}</h1>
                     <h4>${movieDetail.Genre}</h4>
                     <p>${movieDetail.Plot}</p>
                 </div>
-            </div>       
+            </div>
         </article>
 
         <article data-value=${awards} class="notification is-primary">
