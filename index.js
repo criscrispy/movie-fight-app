@@ -41,7 +41,6 @@ const autocompleteConfig = {
         // console.log(response);
         // return response.data.Search;
         const allresponse = [...response1.data.Search, ...response2.data.Search]
-        console.log(allresponse);
         return allresponse;
     }
 };
@@ -100,16 +99,21 @@ const runComparism = () => {
             leftStat.classList.remove('is-primary')
             leftStat.classList.add('is-warning')
         }
-        else {
+        else if (rightSideValue < leftSideValue) {
             rightStat.classList.remove('is-primary')
             rightStat.classList.add('is-warning')
+        }
+        else {
+            rightStat.classList.remove('is-primary')
+            rightStat.classList.add('is-info')
+            leftStat.classList.remove('is-primary')
+            leftStat.classList.add('is-info')
         }
 
     })
 }
 
 const movieTemplate = (movieDetail) => {
-    console.log(movieDetail);
     // At the moment, it works mainly for movies; Box office and metascore are absent/ don't apply for series.
     const boxOfficeDollars = parseInt(movieDetail.BoxOffice.replace(/\$/g, '').replace(/,/g, ''));
     const metaScore = parseInt(movieDetail.Metascore);
